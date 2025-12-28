@@ -36,7 +36,8 @@ export default function Certificates() {
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                                         onError={(e) => {
                                             e.currentTarget.style.display = 'none';
-                                            e.currentTarget.nextElementSibling!.style.display = 'flex';
+                                            const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                                            if (sibling) sibling.style.display = 'flex';
                                         }}
                                     />
                                     <div className="w-full h-full hidden items-center justify-center text-6xl">

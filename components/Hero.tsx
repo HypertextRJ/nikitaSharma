@@ -16,7 +16,8 @@ export default function Hero() {
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
                                         e.currentTarget.style.display = 'none';
-                                        e.currentTarget.nextElementSibling!.style.display = 'flex';
+                                        const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                                        if (sibling) sibling.style.display = 'flex';
                                     }}
                                 />
                                 <div className="w-full h-full hidden items-center justify-center text-5xl md:text-6xl font-bold bg-gradient-to-br from-blue-500 to-purple-600">

@@ -22,7 +22,8 @@ export default function About() {
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
                                         e.currentTarget.style.display = 'none';
-                                        e.currentTarget.nextElementSibling!.style.display = 'flex';
+                                        const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                                        if (sibling) sibling.style.display = 'flex';
                                     }}
                                 />
                                 <div className="w-full h-full hidden items-center justify-center">
