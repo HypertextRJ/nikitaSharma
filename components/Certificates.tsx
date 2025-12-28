@@ -102,7 +102,8 @@ export default function Certificates() {
                                 className="w-full h-auto"
                                 onError={(e) => {
                                     e.currentTarget.style.display = 'none';
-                                    e.currentTarget.nextElementSibling!.style.display = 'flex';
+                                    const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                                    if (sibling) sibling.style.display = 'flex';
                                 }}
                             />
                             <div className="w-full h-96 hidden items-center justify-center bg-gradient-to-br from-blue-900 to-purple-900">
